@@ -96,6 +96,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ActorModel\ActorSystemReference.cs" />
+    <Compile Include="ExternalServices\IStockPriceServiceGateway.cs" />
+    <Compile Include="ExternalServices\RandomStockPriceServiceGateway.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
