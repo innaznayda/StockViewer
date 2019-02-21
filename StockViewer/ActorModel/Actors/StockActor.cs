@@ -1,6 +1,7 @@
 ﻿using Akka.Actor;
 using Akka.DI.Core;
 using StockViewer.ActorModel.Messages;
+using System;
 using System.Collections.Generic;
 
 namespace StockViewer.ActorModel.Actors {
@@ -9,6 +10,7 @@ namespace StockViewer.ActorModel.Actors {
         private readonly HashSet<IActorRef> Subscribers;
         private readonly IActorRef PriceLookupChild;
         private decimal StockPrice;
+        private ICancelable PriceRefreshing;
 
         public StockActor(string stock) {
             StockSymbol = stock;
@@ -24,6 +26,15 @@ namespace StockViewer.ActorModel.Actors {
                     subscriber.Tell(stockPriceMessage);
                 }
             });
+        }
+
+        protected override void PreStart() {
+            PriceRefreshing = Context.System.Scheduler.
+                ScheduleTellRepeatedlyCancelable(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1), Self, new RefreshStockPriceMessage(StockSymbol), Self);
+        }
+        protected override void PostStop() {
+            PriceRefreshing.Cancel(false);
+            base.PostStop();
         }
     }
 }
