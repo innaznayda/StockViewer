@@ -96,7 +96,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ActorModel\ActorSystemReference.cs" />
+    <Compile Include="ActorModel\Actors\StockActor.cs" />
     <Compile Include="ActorModel\Messages\RefreshStockPriceMessage.cs" />
+    <Compile Include="ActorModel\Messages\StockPriceMessage.cs" />
+    <Compile Include="ActorModel\Messages\SubscibeToNewStockPrice.cs" />
+    <Compile Include="ActorModel\Messages\UnsibscibeFromNewStockPriceMessage.cs" />
     <Compile Include="ActorModel\Messages\UpdatedStockPriceMessage.cs" />
     <Compile Include="ActorModel\Actors\StockPriceLookupActor.cs" />
     <Compile Include="ExternalServices\IStockPriceServiceGateway.cs" />
