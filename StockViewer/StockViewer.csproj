@@ -96,6 +96,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ActorModel\ActorSystemReference.cs" />
+    <Compile Include="ActorModel\Messages\RefreshStockPriceMessage.cs" />
+    <Compile Include="ActorModel\Messages\UpdatedStockPriceMessage.cs" />
+    <Compile Include="ActorModel\Actors\StockPriceLookupActor.cs" />
     <Compile Include="ExternalServices\IStockPriceServiceGateway.cs" />
     <Compile Include="ExternalServices\RandomStockPriceServiceGateway.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -143,7 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ActorModel\Actors\UI\" />
-    <Folder Include="ActorModel\Messages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
