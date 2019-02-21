@@ -1,7 +1,6 @@
 using GalaSoft.MvvmLight;
 
-namespace StockViewer.ViewModel
-{
+namespace StockViewer.ViewModel {
     /// <summary>
     /// This class contains properties that the main View can data bind to.
     /// <para>
@@ -14,13 +13,11 @@ namespace StockViewer.ViewModel
     /// See http://www.galasoft.ch/mvvm
     /// </para>
     /// </summary>
-    public class MainViewModel : ViewModelBase
-    {
+    public class MainViewModel : ViewModelBase {
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public MainViewModel()
-        {
+        public MainViewModel() {
             ////if (IsInDesignMode)
             ////{
             ////    // Code runs in Blend --> create design time data.

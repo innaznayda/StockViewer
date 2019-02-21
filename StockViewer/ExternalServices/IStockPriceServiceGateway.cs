@@ -1,7 +1,5 @@
-﻿namespace StockViewer.ExternalServices
-{
-    interface IStockPriceServiceGateway
-    {
+﻿namespace StockViewer.ExternalServices {
+    interface IStockPriceServiceGateway {
         decimal GetLatestPrice(string stockSymbol);
     }
 }
