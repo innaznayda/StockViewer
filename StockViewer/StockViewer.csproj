@@ -112,6 +112,7 @@
     <Compile Include="ExternalServices\IStockPriceServiceGateway.cs" />
     <Compile Include="ExternalServices\RandomStockPriceServiceGateway.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\StoclToggleButtonViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
