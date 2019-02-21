@@ -1,4 +1,5 @@
-﻿using Akka.Actor;
+﻿using System;
+using Akka.Actor;
 using StockViewer.ActorModel.Messages;
 using StockViewer.ExternalServices;
 
@@ -8,7 +9,13 @@ namespace StockViewer.ActorModel.Actors {
 
         public StockPriceLookupActor(IStockPriceServiceGateway stockPriceServiceGateway) {
             StockPriceServiceGateway = stockPriceServiceGateway;
-            Receive<RefreshStockPriceMessage>
+            Receive<RefreshStockPriceMessage>(message => LookupStockPrice(message));
+        }
+
+        private void LookupStockPrice(RefreshStockPriceMessage message) {
+            var latestPrice = StockPriceServiceGateway.GetLatestPrice(message.StockSymbol);
+            //response
+            Sender.Tell(new UpdatedStockPriceMessage(latestPrice, DateTime.Now));
         }
     }
 }
